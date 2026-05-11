@@ -1,13 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('#menu a');
 
-    // Перемикання активного пункту меню
-    navLinks.forEach(link => {
+    menuLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            navLinks.forEach(l => l.classList.remove('active'));
+            // Видаляємо активний клас у всіх
+            menuLinks.forEach(item => item.classList.remove('active'));
+            
+            // Додаємо тому, на який натиснули
             this.classList.add('active');
         });
     });
+});
 
     // Плавна поява елементів при завантаженні (для "дорогого" вигляду)
     const items = document.querySelectorAll('.feat-item, .img-card');
