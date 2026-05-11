@@ -1,34 +1,23 @@
-// Чекаємо повного завантаження DOM-структури
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. ЛОГІКА АКТИВНОГО МЕНЮ
-    // Отримуємо всі посилання в навігації
-    const menuItems = document.querySelectorAll('.menu-item');
+    const navLinks = document.querySelectorAll('#menu a');
 
-    menuItems.forEach(item => {
-        item.addEventListener('click', function(event) {
-            // Видаляємо клас 'active' у всіх пунктів
-            menuItems.forEach(el => el.classList.remove('active'));
-            
-            // Додаємо клас 'active' тому пункту, на який натиснули
+    // Перемикання активного пункту меню
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            navLinks.forEach(l => l.classList.remove('active'));
             this.classList.add('active');
-            
-            // Якщо це просто демонстрація і посилання нікуди не ведуть (#),
-            // можна розкоментувати рядок нижче, щоб сторінка не стрибала вгору:
-            // event.preventDefault();
         });
     });
 
-    // 2. ДОДАТКОВА ЛОГІКА ДЛЯ ZOOM (опціонально)
-    // Оскільки ми реалізували зум через CSS :hover, JS тут не обов'язковий.
-    // Але якщо ти захочеш, щоб зум закривався по кліку на мобілках:
-    const images = document.querySelectorAll('.img-zoom img');
-    
-    images.forEach(img => {
-        img.addEventListener('click', () => {
-            console.log('Ви переглядаєте фото продукту: ' + img.alt);
-        });
+    // Плавна поява елементів при завантаженні (для "дорогого" вигляду)
+    const items = document.querySelectorAll('.feat-item, .img-card');
+    items.forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'all 0.5s ease-out';
+        setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+        }, 150 * index);
     });
-
-    console.log('NanoTech script loaded successfully!');
 });

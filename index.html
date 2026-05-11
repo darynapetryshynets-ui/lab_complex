@@ -3,49 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NanoTech — Ремонт та продаж</title>
+    <title>Nano Tech | Premium Electronics & Service</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/689/689305.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="canvas">
-        <div class="grid-container">
-            <header class="header"><h1>NanoTech</h1></header>
-            <section class="subheader"><h3>Premium Smartphone Service</h3></section>
 
-            <nav class="menu">
-                <a href="#" class="menu-item active">Головна</a>
-                <a href="#" class="menu-item">Каталог</a>
-                <a href="#" class="menu-item">Послуги</a>
-                <a href="#" class="menu-item">Гарантія</a>
-            </nav>
-
-            <aside class="sidebar-left">
-                <div class="img-zoom"><img src="img/p1.jpg" alt="iPhone"></div>
-                <div class="img-zoom"><img src="img/p2.jpg" alt="Samsung"></div>
-                <div class="img-zoom"><img src="img/p3.jpg" alt="Pixel"></div>
-            </aside>
-
-            <main class="main-content">
-                <h2>Професійний ремонт гаджетів</h2>
-                <p>Ми займаємося відновленням техніки будь-якої складності. Від заміни скла до пайки материнських плат.</p>
-                <div class="card">
-                    <h4>Терміновий викуп</h4>
-                    <p>Оцінка вашого пристрою за 5 хвилин.</p>
-                </div>
-            </main>
-
-            <aside class="sidebar-right">
-                <div class="img-zoom"><img src="img/p4.jpg" alt="Tools"></div>
-                <div class="img-zoom"><img src="img/p5.jpg" alt="Parts"></div>
-                <div class="img-zoom"><img src="img/p6.jpg" alt="Service"></div>
-            </aside>
-
-            <footer class="footer">
-                <p>© 2026 NanoTech. Працюємо без вихідних.</p>
-            </footer>
+<div class="main-container">
+    <header class="top-bar">
+        <div class="logo-area">
+            <h1>NANO<span>TECH</span></h1>
         </div>
+        <div class="info-area">
+            <p>⚡ Професійний сервіс та гарантія якості</p>
+        </div>
+    </header>
+
+    <nav class="nav-bar">
+        <ul id="menu">
+            <li><a href="#" class="active">Головна</a></li>
+            <li><a href="#">Смартфони</a></li>
+            <li><a href="#">Ноутбуки</a></li>
+            <li><a href="#">Ремонт</a></li>
+            <li><a href="#">Аксесуари</a></li>
+        </ul>
+    </nav>
+
+    <div class="grid-layout">
+        <aside class="gallery-side">
+            <div class="img-card"><img src="https://images.unsplash.com/photo-1592890288564-76628a30a657?q=80&w=400" alt="Phone"></div>
+            <div class="img-card"><img src="https://images.unsplash.com/photo-1517336712461-481ec772021c?q=80&w=400" alt="Laptop"></div>
+            <div class="img-card"><img src="https://images.unsplash.com/photo-1601524909162-cd8725f15e99?q=80&w=400" alt="Repair"></div>
+        </aside>
+
+        <main class="content-area">
+            <section class="hero-text">
+                <h2>Майбутнє технологій вже тут</h2>
+                <p>Ласкаво просимо до <strong>Nano Tech</strong>. Ми поєднуємо продаж преміальних гаджетів із сервісом найвищої кваліфікації. Ваш пристрій у надійних руках.</p>
+                
+                <div class="features">
+                    <div class="feat-item">
+                        <h4>Експертність</h4>
+                        <p>Наші майстри мають сертифікацію для роботи з технікою Apple та Samsung.</p>
+                    </div>
+                    <div class="feat-item">
+                        <h4>Оригінальність</h4>
+                        <p>Використовуємо лише оригінальні запчастини та сертифіковані аксесуари.</p>
+                    </div>
+                </div>
+
+                <a href="#" class="cta-button">Отримати консультацію</a>
+            </section>
+        </main>
+
+        <aside class="gallery-side">
+            <div class="img-card"><img src="https://images.unsplash.com/photo-1556656793-062ff987b50d?q=80&w=400" alt="Fix"></div>
+            <div class="img-card"><img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=400" alt="Galaxy"></div>
+            <div class="img-card"><img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=400" alt="Hardware"></div>
+        </aside>
     </div>
-    <script src="script.js"></script>
+
+    <footer class="bottom-bar">
+        <p>м. Київ, вул. Технологічна, 101 | Пн-Нд: 09:00 - 20:00</p>
+        <p class="copyright">© 2026 NANO TECH PREMIUM STORE. ALL RIGHTS RESERVED.</p>
+    </footer>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
