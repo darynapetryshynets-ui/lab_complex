@@ -447,3 +447,36 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
+/* --- СТИЛІ ДЛЯ ІКОНОК СОЦМЕРЕЖ --- */
+.social-icons-only {
+    display: flex;
+    gap: 20px;               /* Відступ між іконками */
+    justify-content: flex-start; /* Вирівнювання по лівому краю */
+    margin-top: 15px;
+}
+
+.icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;             /* Розмір круга-підкладки */
+    height: 45px;
+    border-radius: 50%;      /* Робимо круг */
+    background: rgba(30, 41, 59, 0.5); /* Напівпрозорий сірий фон */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Ледь помітна рамка */
+    color: #94a3b8;          /* Базовий колір іконки */
+    font-size: 1.4rem;       /* Розмір самої іконки */
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легка тінь */
+}
+
+/* Ефект при наведенні */
+.icon-link:hover {
+    color: #fff;              /* Іконка стає білою */
+    background: #38bdf8;      /* Тло стає блакитним (твій акцентний колір) */
+    transform: translateY(-5px) rotate(5deg); /* Піднімається і трохи повертається */
+    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.5); /* Неонове світіння */
+    border-color: transparent;
+}
