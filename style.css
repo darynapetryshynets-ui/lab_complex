@@ -409,3 +409,115 @@ body {
     transform: translateY(-3px) !important; /* Легкий підйом при наведенні */
     box-shadow: 0 15px 30px rgba(0, 113, 227, 0.3) !important;
 }
+
+/* ПОКРАЩЕННЯ ТЕКСТОВОГО БЛОКУ */
+.content-area {
+    padding: 60px 80px !important; /* Більше відступів по боках */
+}
+
+.hero-text h2 {
+    font-size: 3rem !important; /* Збільшений заголовок */
+    font-weight: 800 !important;
+    letter-spacing: -1px !important;
+    margin-bottom: 20px !important;
+    color: #1d1d1f !important;
+}
+
+.hero-text p {
+    font-size: 1.2rem !important;
+    line-height: 1.5 !important;
+    color: #86868b !important; /* М'який сірий колір */
+    max-width: 600px;
+}
+
+/* Стиль для іконок переваг (Експертність, Оригінальність) */
+.hero-text div {
+    margin-bottom: 40px !important;
+    padding-left: 20px !important;
+    border-left: 3px solid #f5f5f7 !important; /* Вертикальна декоративна лінія зліва */
+}
+
+/* СТИЛЬ ВНУТРІШНІХ МЕНЮ/АКЦЕНТІВ */
+.hero-text b {
+    display: inline-block !important;
+    font-size: 14px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    color: #0071e3 !important; /* Синій акцент */
+    margin-bottom: 8px !important;
+    border-bottom: 2px solid #0071e3 !important; /* Лінія під кожним пунктом */
+    padding-bottom: 2px !important;
+}
+
+/* КРУТА КНОПКА КОНСУЛЬТАЦІЇ - ВЕРСІЯ 2.0 */
+.hero-text a, 
+.content-area a, 
+.btn-consult {
+    display: inline-block !important;
+    margin-top: 30px !important;
+    padding: 16px 35px !important;
+    background-color: #1d1d1f !important; /* Чорний колір Apple */
+    color: #ffffff !important; /* Білий текст */
+    text-decoration: none !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    text-align: center !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+    cursor: pointer !important;
+}
+
+/* Ефект при наведенні */
+.hero-text a:hover, 
+.btn-consult:hover {
+    background-color: #0071e3 !important; /* Зміна на синій */
+    transform: translateY(-3px) !important;
+    box-shadow: 0 15px 30px rgba(0, 113, 227, 0.4) !important;
+    color: #ffffff !important;
+}
+
+.img-card {
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
+    transition: transform 0.3s ease !important;
+}
+
+.img-card:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* РОЗДІЛЬНІ ЛІНІЇ ДЛЯ ГАЛЕРЕЙ */
+.grid-layout {
+    display: grid !important;
+    grid-template-columns: 200px 1fr 200px !important;
+    gap: 0 !important; /* Прибираємо проміжки, щоб лінії прилягали */
+    border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.gallery-side {
+    background: #fbfbfd !important;
+    padding: 20px 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+}
+
+/* Ліва лінія */
+.gallery-side:first-child {
+    border-right: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Права лінія */
+.gallery-side:last-child {
+    border-left: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.content-area {
+    padding: 60px !important;
+    background: #ffffff !important;
+    position: relative !important;
+}

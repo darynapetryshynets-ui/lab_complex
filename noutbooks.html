@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+
+<style>
+/* РОЗТЯГУЄМО КОНТЕНТ НА ВСЮ ШИРИНУ */
+.content-area.full-width {
+    padding: 60px 40px !important;
+    max-width: 100% !important; /* Додаємо це, щоб прибрати обмеження */
+    width: 100% !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+/* СІТКА 3x3 */
+.product-grid {
+    display: grid !important;
+    /* Створюємо рівно 3 колонки, кожна займає 1 частину місця */
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 30px !important;
+    width: 100% !important;
+    margin-top: 40px !important;
+}
+
+.product-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    border-radius: 20px !important;
+    padding: 30px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    transition: all 0.3s ease !important;
+}
+
+/* ФОТО ТОВАРУ */
+.product-card img {
+    width: 100% !important;
+    max-width: 200px !important; /* Трохи збільшимо для сітки 3x3 */
+    height: 220px !important;
+    object-fit: contain !important;
+    margin-bottom: 20px !important;
+}
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ноутбуки | NANO TECH</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Header (такий самий як на smart.html) -->
+        <header class="top-bar">
+            <div class="logo-area">
+                <h1>NANO<span>TECH</span></h1>
+            </div>
+            <div class="info-area">
+                <p>Професійні рішення для роботи та навчання</p>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="smart.html">Смартфони</a></li>
+                <li><a href="laptops.html" class="active">Ноутбуки</a></li>
+                <li><a href="#">Ремонт</a></li>
+                <li><a href="#">Аксесуари</a></li>
+            </ul>
+        </nav>
+
+        <!-- Основний контент на всю ширину -->
+        <main class="content-area full-width">
+            <div class="hero-text">
+                <b>Висока продуктивність</b>
+                <h2>Каталог ноутбуків</h2>
+            </div>
+
+            <div class="product-grid">
+                <!-- MacBook Air M3 -->
+                <div class="product-card">
+                    <div class="product-badge">Top</div>
+                    <img src="https://hotline.ua/img/tx/436/4363248355.jpg" alt="MacBook Air">
+                    <h3>MacBook Air 13" M3</h3>
+                    <p>M3 / 8GB / 256GB / Space Gray</p>
+                    <div class="price">46 500 ₴</div>
+                    <a href="https://t.me/ВАШ_НІК?text=Хочу купити: MacBook Air M3" target="_blank" class="btn-buy">Купити</a>
+                </div>
+
+                <!-- ASUS ROG Zephyrus -->
+                <div class="product-card">
+                    <div class="product-badge">Gaming</div>
+                    <img src="https://hotline.ua/img/tx/436/4364003355.jpg" alt="ASUS ROG">
+                    <h3>ASUS ROG Zephyrus G16</h3>
+                    <p>OLED / Ultra 7 / RTX 4070 / 16GB</p>
+                    <div class="price">92 000 ₴</div>
+                    <a href="https://t.me/ВАШ_НІК?text=Хочу купити: ASUS ROG Zephyrus G16" target="_blank" class="btn-buy">Купити</a>
+                </div>
+
+                <!-- Lenovo ThinkPad X1 -->
+                <div class="product-card">
+                    <div class="product-badge">Business</div>
+                    <img src="https://hotline.ua/img/tx/335/3355743155.jpg" alt="ThinkPad">
+                    <h3>Lenovo ThinkPad X1 Carbon</h3>
+                    <p>i7-1355U / 16GB / 512GB / Pro</p>
+                    <div class="price">74 800 ₴</div>
+                    <a href="https://t.me/ВАШ_НІК?text=Хочу купити: ThinkPad X1 Carbon" target="_blank" class="btn-buy">Купити</a>
+                </div>
+
+                <!-- Dell XPS 13 -->
+                <div class="product-card">
+                    <img src="https://hotline.ua/img/tx/439/4397759155.jpg" alt="Dell XPS">
+                    <h3>Dell XPS 13 9340</h3>
+                    <p>Ultra 7 / 16GB / 512GB / Silver</p>
+                    <div class="price">68 900 ₴</div>
+                    <a href="https://t.me/ВАШ_НІК?text=Хочу купити: Dell XPS 13" target="_blank" class="btn-buy">Купити</a>
+                </div>
+
+                <!-- HP Victus 15 -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <img src="https://hotline.ua/img/tx/396/3969503355.jpg" alt="HP Victus">
+                    <h3>HP Victus 15-fa1000</h3>
+                    <p>i5-13500H / RTX 4050 / 16GB</p>
+                    <div class="price">39 500 ₴</div>
+                    <a href="https://t.me/@wnesnoww?text=Хочу купити: HP Victus 15" target="_blank" class="btn-buy">Купити</a>
+                </div>
+
+                <!-- Acer Swift Go -->
+                <div class="product-card">
+                    <img src="https://hotline.ua/img/tx/416/4161803155.jpg" alt="Acer Swift">
+                    <h3>Acer Swift Go 14</h3>
+                    <p>OLED / i5-1335U / 16GB / 512GB</p>
+                    <div class="price">29 900 ₴</div>
+                    <a href="https://t.me/ВАШ_НІК?text=Хочу купити: Acer Swift Go 14" target="_blank" class="btn-buy">Купити</a>
+                </div>
+            </div>
+        </main>
+
+     <footer class="bottom-bar">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>NANO<span>TECH</span></h3>
+                <p>Продаж та професійний ремонт гаджетів з 2016 року.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Зв'язок</h4>
+                <ul>
+                    <li><a href="tel:+380981782968">📞 +38 (098) 178-29-68</a></li>
+                    <li><a href="mailto:info@nanotech.ua">✉️ info@nanotech.ua</a></li>
+                    <li>📍 с. Довге, вул. Центральна, 52 </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Ми в соцмережах</h4>
+                <div class="social-icons-only">
+                    <a href="https://www.instagram.com/nanotechservice/" target="_blank" class="icon-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" class="icon-link"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#" target="_blank" class="icon-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" class="icon-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">© 2026 NANO TECH Store. Всі права захищені.</p>
+        </div>
+    </footer>
+    </div>
+</body>
+</html>

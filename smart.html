@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<style>
+/* РОЗТЯГУЄМО КОНТЕНТ НА ВСЮ ШИРИНУ */
+.content-area.full-width {
+    padding: 60px 40px !important;
+    max-width: 100% !important; /* Додаємо це, щоб прибрати обмеження */
+    width: 100% !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+/* СІТКА 3x3 */
+.product-grid {
+    display: grid !important;
+    /* Створюємо рівно 3 колонки, кожна займає 1 частину місця */
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 30px !important;
+    width: 100% !important;
+    margin-top: 40px !important;
+}
+
+.product-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    border-radius: 20px !important;
+    padding: 30px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    transition: all 0.3s ease !important;
+}
+
+/* ФОТО ТОВАРУ */
+.product-card img {
+    width: 100% !important;
+    max-width: 200px !important; /* Трохи збільшимо для сітки 3x3 */
+    height: 220px !important;
+    object-fit: contain !important;
+    margin-bottom: 20px !important;
+}
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смартфони | NANO TECH</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/png" href="favicon.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <header class="top-bar">
+            <div class="logo-area">
+                <h1>NANO<span>TECH</span></h1>
+            </div>
+            <div class="info-area">
+                <p>Офіційна гарантія та сертифікований сервіс</p>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html" class="active">Головна</a></li>
+            <li><a href="smart.html">Смартфони</a></li>
+            <li><a href="noutbooks.html">Ноутбуки</a></li>
+            <li><a href="remont.html">Ремонт</a></li>
+            <li><a href="access.html">Аксесуари</a></li>
+            </ul>
+        </nav>
+
+        <!-- Тільки одна колонка для контенту -->
+        <main class="content-area full-width">
+            <div class="hero-text">
+                <b>Преміальні пристрої</b>
+                <h2>Каталог смартфонів</h2>
+            </div>
+
+            <div class="product-grid">
+                <!-- iPhone 15 -->
+                <div class="product-card">
+                    <div class="product-badge">Top</div>
+                    <img src="phone1.jpg" alt="iPhone 15 Pro Max">
+                    <h3>iPhone 15 Pro Max</h3>
+                    <p>Natural Titanium, 256GB</p>
+                    <div class="price">48 900 ₴</div>
+                    <a href="https://t.me/ВАШ_НІК?text=Доброго дня! Хочу купити: iPhone 15 Pro Max" target="_blank" class="btn-buy">Купити</a>
+                </div>
+
+                <!-- Samsung S24 -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <img src="phone2.jpg" alt="Galaxy S24 Ultra">
+                    <h3>Galaxy S24 Ultra</h3>
+                    <p>Titanium Gray, 512GB</p>
+                    <div class="price">52 500 ₴</div>
+                    <a href="https://t.me/ВАШ_НІК?text=Доброго дня! Хочу купити: iPhone 15 Pro Max" target="_blank" class="btn-buy">Купити</a>
+                </div>
+
+                <!-- Google Pixel 8 -->
+                <div class="product-card">
+                    <img src="phone3.jpg" alt="Pixel 8 Pro">
+                    <h3>Google Pixel 8 Pro</h3>
+                    <p>Obsidian, 128GB</p>
+                    <div class="price">36 000 ₴</div>
+                    <a href="https://t.me/ВАШ_НІК?text=Доброго дня! Хочу купити: iPhone 15 Pro Max" target="_blank" class="btn-buy">Купити</a>
+                </div>
+
+                <!-- Xiaomi 14 -->
+                <div class="product-card">
+                    <img src="phone4.jpg" alt="Xiaomi 14 Ultra">
+                    <h3>Xiaomi 14 Ultra</h3>
+                    <p>Black, 512GB</p>
+                    <div class="price">41 900 ₴</div>
+                    <a href="https://t.me/ВАШ_НІК?text=Доброго дня! Хочу купити: iPhone 15 Pro Max" target="_blank" class="btn-buy">Купити</a>
+                </div>
+				
+				 <div class="product-card">
+                    <img src="phone5.jpg" alt="Pixel 8 Pro">
+                    <h3>Asus Zenfone 10</h3>
+                    <p>Obsidian, 128GB</p>
+                    <div class="price">36 000 ₴</div>
+                    <a href="https://t.me/ВАШ_НІК?text=Доброго дня! Хочу купити: iPhone 15 Pro Max" target="_blank" class="btn-buy">Купити</a>
+                </div>
+				
+				 <div class="product-card">
+                    <img src="phone6.jpg" alt="Pixel 8 Pro">
+                    <h3>Nokia 3310 Finalnd чорно-білий </h3>
+                    <p>Obsidian, 128GB</p>
+                    <div class="price">36 000 ₴</div>
+                    <a href="https://t.me/ВАШ_НІК?text=Доброго дня! Хочу купити: iPhone 15 Pro Max" target="_blank" class="btn-buy">Купити</a>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+       <footer class="bottom-bar">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>NANO<span>TECH</span></h3>
+                <p>Продаж та професійний ремонт гаджетів з 2016 року.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Зв'язок</h4>
+                <ul>
+                    <li><a href="tel:+380981782968">📞 +38 (098) 178-29-68</a></li>
+                    <li><a href="mailto:info@nanotech.ua">✉️ info@nanotech.ua</a></li>
+                    <li>📍 с. Довге, вул. Центральна, 52 </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Ми в соцмережах</h4>
+                <div class="social-icons-only">
+                    <a href="https://www.instagram.com/nanotechservice/" target="_blank" class="icon-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" class="icon-link"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#" target="_blank" class="icon-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" class="icon-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">© 2026 NANO TECH Store. Всі права захищені.</p>
+        </div>
+    </footer>
+    </div>
+</body>
+</html>
