@@ -22,13 +22,14 @@
 
 body {
     background-color: var(--bg-main);
-	background: radial-gradient(circle at top, #ffffff 0%, #f5f5f7 100%) !important;
-    background-attachment: fixed !important;
-    padding: 40px 20px !important;
+	background: radial-gradient(circle at center, #ffffff 0%, #f5f5f7 100%) !important;
+    background-attachment: fixed !important; /* Фон не рухається при скролі */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;;
     color: var(--text-primary);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
-    padding: 40px 20px;
     display: flex;
     justify-content: center;
 }
@@ -38,8 +39,11 @@ body {
     max-width: 1200px;
     width: 100%;
     background: #ffffff !important;
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.04) !important;
     border: 1px solid rgba(0, 0, 0, 0.08) !important;
+	border-radius: 30px;
+    margin-top: 20px;
+    margin-bottom: 40px;
     border-radius: 24px;
     overflow: hidden;
     animation: fadeIn 0.8s ease-out;
@@ -520,4 +524,191 @@ body {
     padding: 60px !important;
     background: #ffffff !important;
     position: relative !important;
+}
+
+/* ЦЕНТРОВАНИЙ ДИЗАЙН ГОЛОВНОЇ */
+.top-bar.centered {
+    display: flex;
+    flex-direction: column; /* Елементи в стовпчик */
+    align-items: center;    /* Центрування по горизонталі */
+    justify-content: center;
+    padding: 40px 20px !important;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.top-bar.centered .logo-area {
+    border: none !important; /* Прибираємо вертикальну лінію з image_3b35bc.png */
+    padding: 0 !important;
+    margin-bottom: 10px;
+}
+
+.top-bar.centered .logo-area h1 {
+    font-size: 48px !important; /* Робимо логотип більшим на головній */
+    letter-spacing: -2px !important;
+}
+
+.top-bar.centered .info-area {
+    padding: 0 !important;
+    text-align: center;
+}
+
+.top-bar.centered .info-area p {
+    font-size: 16px !important;
+    color: #86868b !important;
+    font-weight: 400;
+}
+
+/* Центрування меню */
+.nav-bar ul {
+    justify-content: center !important;
+    gap: 30px; /* Більше простору між пунктами */
+}
+
+/* СПЕЦІАЛЬНИЙ МАКЕТ ДЛЯ ГОЛОВНОЇ */
+.main-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Розносить елементи по краях */
+    padding: 30px 40px !important;
+    position: relative;
+    border-bottom: 1px solid #f2f2f2;
+    min-height: 100px;
+}
+
+/* ЦЕНТРУВАННЯ ТА СТИЛЬ ЛОГОТИПУ */
+.logo-area-centered h1 {
+    font-size: 48px !important; /* Трохи збільшив для солідності */
+    font-weight: 900 !important;
+    letter-spacing: -2px !important;
+    margin: 0 !important;
+    color: #1d1d1f !important;
+    display: inline-block;
+}
+
+/* ПІДСВІТКА ДЛЯ СИНЬОЇ ЧАСТИНИ (TECH) */
+.logo-area-centered h1 span {
+    color: #0071e3 !important;
+    position: relative;
+    /* М'яке неонове сяйво навколо літер */
+    text-shadow: 0 0 15px rgba(0, 113, 227, 0.4), 
+                 0 0 30px rgba(0, 113, 227, 0.2);
+    /* Ефект легкого градієнту всередині тексту */
+    background: linear-gradient(180deg, #0071e3 0%, #0056b3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* Інфо-блок справа в колонці */
+.info-area-right {
+    margin-left: auto; /* Притискає до правого краю */
+    text-align: right; /* Текст вирівняний по правому краю */
+    max-width: 200px;  /* Щоб текст розбивався на колонку */
+}
+
+.info-area-right p {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    color: #86868b !important;
+    font-weight: 400;
+    margin: 0 !important;
+}
+
+/* Для мобільних пристроїв — краще повернути в стовпчик */
+@media (max-width: 768px) {
+    .main-page-header {
+        flex-direction: column;
+        padding: 20px !important;
+    }
+    .logo-area-centered {
+        position: static;
+        transform: none;
+        margin-bottom: 15px;
+    }
+    .info-area-right {
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+.bg-glow-1, .bg-glow-2 {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    opacity: 0.4;
+}
+
+.bg-glow-1 {
+    background: rgba(0, 113, 227, 0.08); /* Синій відблиск */
+    top: -200px;
+    left: -200px;
+}
+
+.bg-glow-2 {
+    background: rgba(0, 0, 0, 0.03); /* Темний відблиск */
+    bottom: -200px;
+    right: -200px;
+}
+
+/* Основна секція переваг */
+.benefits-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+/* Контейнер, що об'єднує фото та текст */
+.benefits-container {
+    display: flex;
+    align-items: center; /* Центрування по вертикалі */
+    gap: 50px;           /* Відстань між фото та текстом */
+    max-width: 1200px;
+    width: 90%;
+}
+
+/* Контейнер для фото (виправляє кривизну) */
+.benefits-image {
+    flex: 1;
+    height: 450px;       /* Фіксована висота для стабільності макета */
+    border-radius: 28px; /* Закруглені краї як у iPhone */
+    overflow: hidden;    /* Щоб фото не виходило за рамки радіуса */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+/* Стилі безпосередньо для зображення */
+.benefits-image img {
+    width: 100%;
+    height: 100%;
+    /* ГАРАНТІЯ РІВНОГО ФОТО: */
+    object-fit: cover;   /* Фото заповнює блок, не розтягуючись */
+    object-position: center; /* Центрує важливі деталі фото */
+    display: block;
+}
+
+/* Анімація при скролі (базовий стан) */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Клас, який додається через JS при появі на екрані */
+.animate-on-scroll.appeared {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Адаптивність для телефонів */
+@media (max-width: 768px) {
+    .benefits-container {
+        flex-direction: column; /* Текст під фото */
+        text-align: center;
+    }
+    
+    .benefits-image {
+        width: 100%;
+        height: 300px;
+    }
 }

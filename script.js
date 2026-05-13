@@ -72,3 +72,24 @@ document.querySelectorAll('.img-card img').forEach(img => {
 lightbox.addEventListener('click', () => {
     lightbox.style.display = 'none';
 });
+
+const modal = document.getElementById("photo-modal");
+const modalImg = document.getElementById("full-photo");
+const closeBtn = document.querySelector(".close-modal");
+
+document.querySelectorAll('.product-card img').forEach(img => {
+    img.onclick = function() {
+        modal.style.display = "flex"; // Змінено з block на flex
+        modalImg.src = this.src;
+        document.body.style.overflow = "hidden"; // Забороняємо скрол сайту під фото
+    }
+});
+
+// Функція закриття
+function closeModal() {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto"; // Повертаємо скрол
+}
+
+closeBtn.onclick = closeModal;
+modal.onclick = (e) => { if(e.target === modal) closeModal(); };

@@ -41,6 +41,47 @@
     object-fit: contain !important;
     margin-bottom: 20px !important;
 }
+
+/* ПРИМУСОВЕ ЦЕНТРУВАННЯ МОДАЛКИ */
+#photo-modal {
+    display: none; 
+    position: fixed !important;
+    z-index: 10000 !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(10px);
+    
+    /* Головне для центрування */
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+#full-photo {
+    max-width: 85% !important;
+    max-height: 85% !important;
+    margin: auto !important; /* Гарантує центр */
+    display: block !important;
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+}
+
+/* ЛАГОДИМО ЗУМ ПРИ НАВЕДЕННІ */
+.product-card {
+    overflow: hidden !important; /* Щоб зум не виходив за межі картки */
+}
+
+.product-card img {
+    transition: transform 0.4s ease-in-out !important;
+    cursor: zoom-in !important;
+}
+
+.product-card:hover img {
+    transform: scale(1.15) !important; /* Збільшення на 15% */
+}
+
 </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,7 +121,6 @@
             <div class="product-grid">
                 <!-- MacBook Air M3 -->
                 <div class="product-card">
-                    <div class="product-badge">Top</div>
                     <img src="nout1.jpg" alt="MacBook Air">
                     <h3>MacBook Air 13" M3</h3>
                     <p>M3 / 8GB / 256GB / Space Gray</p>
@@ -90,8 +130,7 @@
 
                 <!-- ASUS ROG Zephyrus -->
                 <div class="product-card">
-                    <div class="product-badge">Gaming</div>
-                    <img src="https://hotline.ua/img/tx/436/4364003355.jpg" alt="ASUS ROG">
+                    <img src="nout2.jpg" alt="ASUS ROG">
                     <h3>ASUS ROG Zephyrus G16</h3>
                     <p>OLED / Ultra 7 / RTX 4070 / 16GB</p>
                     <div class="price">92 000 ₴</div>
@@ -100,8 +139,7 @@
 
                 <!-- Lenovo ThinkPad X1 -->
                 <div class="product-card">
-                    <div class="product-badge">Business</div>
-                    <img src="https://hotline.ua/img/tx/335/3355743155.jpg" alt="ThinkPad">
+                    <img src="nout3.jpg" alt="ThinkPad">
                     <h3>Lenovo ThinkPad X1 Carbon</h3>
                     <p>i7-1355U / 16GB / 512GB / Pro</p>
                     <div class="price">74 800 ₴</div>
@@ -110,7 +148,7 @@
 
                 <!-- Dell XPS 13 -->
                 <div class="product-card">
-                    <img src="https://hotline.ua/img/tx/439/4397759155.jpg" alt="Dell XPS">
+                    <img src="nout4.jpg" alt="Dell XPS">
                     <h3>Dell XPS 13 9340</h3>
                     <p>Ultra 7 / 16GB / 512GB / Silver</p>
                     <div class="price">68 900 ₴</div>
@@ -119,8 +157,7 @@
 
                 <!-- HP Victus 15 -->
                 <div class="product-card">
-                    <div class="product-badge">New</div>
-                    <img src="https://hotline.ua/img/tx/396/3969503355.jpg" alt="HP Victus">
+                    <img src="nout5.jpg" alt="HP Victus">
                     <h3>HP Victus 15-fa1000</h3>
                     <p>i5-13500H / RTX 4050 / 16GB</p>
                     <div class="price">39 500 ₴</div>
@@ -129,7 +166,7 @@
 
                 <!-- Acer Swift Go -->
                 <div class="product-card">
-                    <img src="https://hotline.ua/img/tx/416/4161803155.jpg" alt="Acer Swift">
+                    <img src="nout6.jpg" alt="Acer Swift">
                     <h3>Acer Swift Go 14</h3>
                     <p>OLED / i5-1335U / 16GB / 512GB</p>
                     <div class="price">29 900 ₴</div>
@@ -169,5 +206,11 @@
         </div>
     </footer>
     </div>
+	<div id="photo-modal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="full-photo">
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

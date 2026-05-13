@@ -147,6 +147,46 @@
     background: none !important;
 }
 
+/* ПРИМУСОВЕ ЦЕНТРУВАННЯ МОДАЛКИ */
+#photo-modal {
+    display: none; 
+    position: fixed !important;
+    z-index: 10000 !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(10px);
+    
+    /* Головне для центрування */
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+#full-photo {
+    max-width: 85% !important;
+    max-height: 85% !important;
+    margin: auto !important; /* Гарантує центр */
+    display: block !important;
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+}
+
+/* ЛАГОДИМО ЗУМ ПРИ НАВЕДЕННІ */
+.product-card {
+    overflow: hidden !important; /* Щоб зум не виходив за межі картки */
+}
+
+.product-card img {
+    transition: transform 0.4s ease-in-out !important;
+    cursor: zoom-in !important;
+}
+
+.product-card:hover img {
+    transform: scale(1.15) !important; /* Збільшення на 15% */
+}
+
 </style>
 
     <meta charset="UTF-8">
@@ -190,8 +230,7 @@
             <div class="product-grid">
                 <!-- AirPods Pro -->
                 <div class="product-card">
-                    <div class="product-badge">Best Sound</div>
-                    <img src="https://hotline.ua/img/tx/416/4163459355.jpg" alt="AirPods Pro">
+                    <img src="acs1.jpg" alt="AirPods Pro">
                     <h3>AirPods Pro 2 (USB-C)</h3>
                     <p>MagSafe Case / Active ANC</p>
                     <div class="price">9 800 ₴</div>
@@ -200,8 +239,7 @@
 
                 <!-- Apple Watch -->
                 <div class="product-card">
-                    <div class="product-badge">New</div>
-                    <img src="https://hotline.ua/img/tx/428/4286782355.jpg" alt="Apple Watch">
+                    <img src="acs2.jpg" alt="Apple Watch">
                     <h3>Apple Watch Series 9</h3>
                     <p>45mm / Midnight Aluminum</p>
                     <div class="price">16 200 ₴</div>
@@ -210,7 +248,7 @@
 
                 <!-- MagSafe Battery Pack -->
                 <div class="product-card">
-                    <img src="https://hotline.ua/img/tx/313/3133379355.jpg" alt="MagSafe">
+                    <img src="acs3.jpg" alt="MagSafe">
                     <h3>MagSafe Battery Pack</h3>
                     <p>External Battery for iPhone</p>
                     <div class="price">3 400 ₴</div>
@@ -219,8 +257,7 @@
 
                 <!-- Marshall Emberton -->
                 <div class="product-card">
-                    <div class="product-badge">Acoustic</div>
-                    <img src="https://hotline.ua/img/tx/242/2426359355.jpg" alt="Marshall">
+                    <img src="acs4.jpg" alt="Marshall">
                     <h3>Marshall Emberton II</h3>
                     <p>Portable Speaker / Black & Brass</p>
                     <div class="price">6 900 ₴</div>
@@ -229,7 +266,7 @@
 
                 <!-- Samsung Buds 2 Pro -->
                 <div class="product-card">
-                    <img src="https://hotline.ua/img/tx/335/3356071355.jpg" alt="Galaxy Buds">
+                    <img src="acs5.jpg" alt="Galaxy Buds">
                     <h3>Galaxy Buds 2 Pro</h3>
                     <p>Bora Purple / Hi-Fi Sound</p>
                     <div class="price">5 500 ₴</div>
@@ -238,7 +275,7 @@
 
                 <!-- Power Bank Baseus -->
                 <div class="product-card">
-                    <img src="https://hotline.ua/img/tx/354/3545648155.jpg" alt="Baseus">
+                    <img src="acs6.jpg" alt="Baseus">
                     <h3>Baseus Adaman 65W</h3>
                     <p>20000mAh / Metal Case</p>
                     <div class="price">2 100 ₴</div>
@@ -247,7 +284,7 @@
             </div>
         </main>
 
-         <footer class="bottom-bar">
+      <footer class="bottom-bar">
         <div class="footer-grid">
             <div class="footer-col">
                 <h3>NANO<span>TECH</span></h3>
@@ -278,5 +315,12 @@
         </div>
     </footer>
     </div>
+	<!-- Модальне вікно (має бути на кожній сторінці) -->
+<div id="photo-modal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="full-photo">
+</div>
+	<script src="script.js"></script>
+	
 </body>
 </html>

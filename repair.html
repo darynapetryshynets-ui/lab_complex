@@ -84,6 +84,25 @@
     margin: 0 auto;
     line-height: 1.4;
 }
+
+/* ЗУМ ДЛЯ КАРТОК РЕМОНТУ */
+.product-grid .product-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.product-grid .product-card:hover {
+    transform: scale(1.05) translateY(-10px) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+    background-color: #ffffff !important;
+    z-index: 10;
+}
+
+/* Анімація іконки при наведенні */
+.product-card:hover .repair-icon {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
 </style>
 
     <meta charset="UTF-8">
@@ -225,5 +244,12 @@
         </div>
     </footer>
     </div>
+	
+	<!-- Модальне вікно (має бути на кожній сторінці) -->
+<div id="photo-modal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="full-photo">
+</div>
+	<script src="script.js"></script>
 </body>
 </html>
