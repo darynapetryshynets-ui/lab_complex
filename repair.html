@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+
+<style>
+/* РОЗТЯГУЄМО КОНТЕНТ НА ВСЮ ШИРИНУ */
+.content-area.full-width {
+    padding: 60px 40px !important;
+    max-width: 100% !important; /* Додаємо це, щоб прибрати обмеження */
+    width: 100% !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+/* СІТКА 3x3 */
+.product-grid {
+    display: grid !important;
+    /* Створюємо рівно 3 колонки, кожна займає 1 частину місця */
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 30px !important;
+    width: 100% !important;
+    margin-top: 40px !important;
+}
+
+.product-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    border-radius: 20px !important;
+    padding: 30px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    transition: all 0.3s ease !important;
+}
+</style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ремонт техніки | NANO TECH</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <header class="top-bar">
+            <div class="logo-area">
+                <h1>NANO<span>TECH</span></h1>
+            </div>
+            <div class="info-area">
+                <p><i class="fas fa-tools"></i> Сервісний центр: швидко та надійно</p>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html" class="active">Головна</a></li>
+            <li><a href="smart.html">Смартфони</a></li>
+            <li><a href="noutbooks.html">Ноутбуки</a></li>
+            <li><a href="repair.html">Ремонт</a></li>
+            <li><a href="access.html">Аксесуари</a></li>
+            </ul>
+        </nav>
+
+        <!-- Основний контент -->
+        <main class="content-area full-width">
+            <div class="hero-text">
+                <b>Повертаємо техніку до життя</b>
+                <h2>Наші послуги з ремонту</h2>
+            </div>
+
+            <div class="product-grid">
+                <!-- Заміна екрану -->
+                <div class="product-card">
+                    <div class="repair-icon" style="font-size: 50px; color: #0071e3; margin-bottom: 20px;">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Заміна дисплея</h3>
+                    <p>Для iPhone, Samsung, Pixel. Тільки оригінальні деталі або якісні копії.</p>
+                    <div class="price">від 1 200 ₴</div>
+                    <a href="https://t.me/ВАШ_НІК?text=Запит на ремонт: Заміна дисплея" target="_blank" class="btn-buy">Записатись</a>
+                </div>
+
+                <!-- Заміна акумулятора -->
+                <div class="product-card">
+                    <div class="repair-icon" style="font-size: 50px; color: #27ae60; margin-bottom: 20px;">
+                        <i class="fas fa-battery-three-quarters"></i>
+                    </div>
+                    <h3>Заміна батареї</h3>
+                    <p>Швидка заміна акумулятора із збереженням вологозахисту (IP68).</p>
+                    <div class="price">від 800 ₴</div>
+                    <a href="https://t.me/ВАШ_НІК?text=Запит на ремонт: Заміна батареї" target="_blank" class="btn-buy">Записатись</a>
+                </div>
+
+                <!-- Чистка ноутбука -->
+                <div class="product-card">
+                    <div class="repair-icon" style="font-size: 50px; color: #e67e22; margin-bottom: 20px;">
+                        <i class="fas fa-fan"></i>
+                    </div>
+                    <h3>Чистка та термопаста</h3>
+                    <p>Профілактика перегріву ноутбуків. Заміна термопасти MX-4.</p>
+                    <div class="price">від 600 ₴</div>
+                    <a href="https://t.me/ВАШ_НІК?text=Запит на ремонт: Чистка ноутбука" target="_blank" class="btn-buy">Записатись</a>
+                </div>
+
+                <!-- Відновлення після води -->
+                <div class="product-card">
+                    <div class="repair-icon" style="font-size: 50px; color: #3498db; margin-bottom: 20px;">
+                        <i class="fas fa-tint-slash"></i>
+                    </div>
+                    <h3>Після залиття</h3>
+                    <p>Ультразвукова чистка плати та відновлення після потрапляння вологи.</p>
+                    <div class="price">від 1 500 ₴</div>
+                    <a href="https://t.me/ВАШ_НІК?text=Запит на ремонт: Після залиття" target="_blank" class="btn-buy">Записатись</a>
+                </div>
+
+                <!-- Складна пайка -->
+                <div class="product-card">
+                    <div class="repair-icon" style="font-size: 50px; color: #9b59b6; margin-bottom: 20px;">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>BGA пайка</h3>
+                    <p>Ремонт материнських плат, заміна контролерів живлення та пам'яті.</p>
+                    <div class="price">від 2 000 ₴</div>
+                    <a href="https://t.me/ВАШ_НІК?text=Запит на ремонт: Пайка плати" target="_blank" class="btn-buy">Записатись</a>
+                </div>
+
+                <!-- Програмне забезпечення -->
+                <div class="product-card">
+                    <div class="repair-icon" style="font-size: 50px; color: #f1c40f; margin-bottom: 20px;">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Прошивка / Soft</h3>
+                    <p>Встановлення Windows, MacOS, розблокування та налаштування ПЗ.</p>
+                    <div class="price">від 400 ₴</div>
+                    <a href="https://t.me/ВАШ_НІК?text=Запит на ремонт: Прошивка ПЗ" target="_blank" class="btn-buy">Записатись</a>
+                </div>
+            </div>
+        </main>
+
+         <footer class="bottom-bar">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>NANO<span>TECH</span></h3>
+                <p>Продаж та професійний ремонт гаджетів з 2016 року.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Зв'язок</h4>
+                <ul>
+                    <li><a href="tel:+380981782968">📞 +38 (098) 178-29-68</a></li>
+                    <li><a href="mailto:info@nanotech.ua">✉️ info@nanotech.ua</a></li>
+                    <li>📍 с. Довге, вул. Центральна, 52 </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Ми в соцмережах</h4>
+                <div class="social-icons-only">
+                    <a href="https://www.instagram.com/nanotechservice/" target="_blank" class="icon-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" class="icon-link"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#" target="_blank" class="icon-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" class="icon-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">© 2026 NANO TECH Store. Всі права захищені.</p>
+        </div>
+    </footer>
+    </div>
+</body>
+</html>
