@@ -32,6 +32,58 @@
     align-items: center !important;
     transition: all 0.3s ease !important;
 }
+
+/* ПРЕМІУМ ДИЗАЙН ДЛЯ РЕМОНТУ */
+.repair-hero {
+    background: linear-gradient(135deg, #1d1d1f 0%, #434343 100%); /* Глибокий градієнт */
+    color: white;
+    padding: 35px 25px !important;
+    border-radius: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Тінь для об'єму */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Тонка рамка */
+}
+
+/* Ефект підсвітки (фоновий відблиск) */
+.repair-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 113, 227, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.repair-title-box h1 {
+    font-size: 1.8rem !important;
+    font-weight: 700;
+    margin: 12px 0 !important;
+    background: linear-gradient(to right, #fff, #a1a1a6); /* Градієнт на тексті */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.badge-new {
+    background: #0071e3;
+    padding: 4px 12px !important;
+    border-radius: 100px;
+    font-size: 9px !important;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px rgba(0, 113, 227, 0.4); /* Світіння баджа */
+}
+
+.repair-title-box p {
+    font-size: 14px !important;
+    color: #a1a1a6;
+    max-width: 450px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
 </style>
 
     <meta charset="UTF-8">
@@ -65,10 +117,13 @@
 
         <!-- Основний контент -->
         <main class="content-area full-width">
-            <div class="hero-text">
-                <b>Повертаємо техніку до життя</b>
-                <h2>Наші послуги з ремонту</h2>
-            </div>
+           <section class="repair-hero">
+    <div class="repair-title-box">
+        <span class="badge-new">Professional Service</span>
+        <h1>Наші послуги з ремонту</h1>
+        <p>Швидка діагностика та якісне відновлення вашої техніки за 1-3 дні</p>
+    </div>
+</section>
 
             <div class="product-grid">
                 <!-- Заміна екрану -->
