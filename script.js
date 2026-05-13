@@ -51,3 +51,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+// Створюємо елементи для перегляду фото
+const lightbox = document.createElement('div');
+lightbox.className = 'image-lightbox';
+lightbox.innerHTML = '<img src="" alt="View">';
+document.body.appendChild(lightbox);
+
+const lightboxImg = lightbox.querySelector('img');
+
+// Налаштовуємо клік на всі зображення в галереї
+document.querySelectorAll('.img-card img').forEach(img => {
+    img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+    });
+});
+
+// Закриття при кліку на фон
+lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
