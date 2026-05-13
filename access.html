@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+
+<style>
+/* РОЗТЯГУЄМО КОНТЕНТ НА ВСЮ ШИРИНУ */
+.content-area.full-width {
+    padding: 60px 40px !important;
+    max-width: 100% !important; /* Додаємо це, щоб прибрати обмеження */
+    width: 100% !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+/* СІТКА 3x3 */
+.product-grid {
+    display: grid !important;
+    /* Створюємо рівно 3 колонки, кожна займає 1 частину місця */
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 30px !important;
+    width: 100% !important;
+    margin-top: 40px !important;
+}
+
+.product-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    border-radius: 20px !important;
+    padding: 30px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    transition: all 0.3s ease !important;
+}
+
+/* ФОТО ТОВАРУ */
+.product-card img {
+    width: 100% !important;
+    max-width: 200px !important; /* Трохи збільшимо для сітки 3x3 */
+    height: 220px !important;
+    object-fit: contain !important;
+    margin-bottom: 20px !important;
+}
+
+/* 1. Прибираємо відступ у головного контейнера контенту */
+.compact-content {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* 2. Компактний заголовок - прибираємо простір зверху */
+.repair-hero-compact {
+    text-align: center;
+    padding: 10px 0 20px 0 !important; /* Мінімальний падінг */
+    margin-top: -15px !important; /* Підтягуємо до меню */
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+/* 3. Стиль тексту (Дорого та чисто) */
+.repair-hero-compact h1 {
+    font-size: 2.2rem !important;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: #1d1d1f;
+    margin: 5px 0 !important;
+    text-shadow: 0 0 15px rgba(0, 113, 227, 0.1);
+}
+
+/* 4. Компактний бадж */
+.badge-premium {
+    color: #0071e3;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background: rgba(0, 113, 227, 0.05);
+    padding: 2px 10px;
+    border-radius: 10px;
+}
+
+/* 5. Видаляємо відступ у навігації, якщо він там є */
+.nav-bar {
+    margin-bottom: 0 !important;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+/* ПРИМУСОВИЙ СТИЛЬ ТЕКСТУ (FORCE FIX) */
+.repair-hero-compact h1, 
+.repair-title-box h1 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 32px !important;
+    font-weight: 800 !important;
+    color: #1d1d1f !important;
+    letter-spacing: -1.5px !important;
+    text-align: center !important;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+    margin-top: 0 !important;
+}
+
+.repair-hero-compact p,
+.repair-title-box p {
+    font-family: -apple-system, sans-serif !important;
+    font-size: 16px !important;
+    color: #86868b !important;
+    text-align: center !important;
+    margin-top: 5px !important;
+}
+
+/* ДИЗАЙН ТЕКСТУ БЕЗ ФОНУ (APPLE STYLE) */
+.repair-title-box {
+    text-align: center;
+    padding: 0 !important;
+    margin-top: -20px !important; /* Підтягуємо вгору */
+}
+
+.repair-title-box h1 {
+    /* Використовуємо системні шрифти, що виглядають дорого */
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif !important;
+    font-size: 38px !important; /* Робимо заголовок солідним */
+    font-weight: 800 !important; /* Жирне накреслення */
+    color: #1d1d1f !important;
+    letter-spacing: -1.2px !important; /* Тісне злиття літер — секрет дорогого стилю */
+    margin-bottom: 8px !important;
+    line-height: 1.1 !important;
+}
+
+.repair-title-box p {
+    font-family: -apple-system, "SF Pro Text", sans-serif !important;
+    font-size: 17px !important;
+    color: #86868b !important; /* Приглушений сірий для контрасту */
+    font-weight: 400 !important;
+    letter-spacing: -0.2px !important;
+    margin: 0 !important;
+}
+
+/* Прибираємо синій бадж, якщо він заважає, або робимо його дуже тонким */
+.badge-premium, .badge-new {
+    display: block;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #0071e3 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px !important;
+    margin-bottom: 5px !important;
+    background: none !important;
+}
+
+</style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аксесуари | NANO TECH</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <header class="top-bar">
+            <div class="logo-area">
+                <h1>NANO<span>TECH</span></h1>
+            </div>
+            <div class="info-area">
+                <p>Доповніть свій стиль найкращими аксесуарами</p>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <ul>
+                 <li><a href="index.html" class="active">Головна</a></li>
+            <li><a href="smart.html">Смартфони</a></li>
+            <li><a href="noutbooks.html">Ноутбуки</a></li>
+            <li><a href="repair.html">Ремонт</a></li>
+            <li><a href="access.html">Аксесуари</a></li>
+            </ul>
+        </nav>
+
+        <!-- Основний контент (у стилі ремонту) -->
+        <main class="content-area full-width">
+            <section class="repair-hero">
+    <div class="repair-title-box">
+        <h1>Стильні комплектуючі</h1>
+        <p>Від чохлів до професійного звуку — тільки перевірена якість</p>
+    </div>
+</section>
+
+            <div class="product-grid">
+                <!-- AirPods Pro -->
+                <div class="product-card">
+                    <div class="product-badge">Best Sound</div>
+                    <img src="https://hotline.ua/img/tx/416/4163459355.jpg" alt="AirPods Pro">
+                    <h3>AirPods Pro 2 (USB-C)</h3>
+                    <p>MagSafe Case / Active ANC</p>
+                    <div class="price">9 800 ₴</div>
+                    <a href="https://t.me/wnesnoww" target="_blank" class="btn-buy">Купити</a>
+                </div>
+
+                <!-- Apple Watch -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <img src="https://hotline.ua/img/tx/428/4286782355.jpg" alt="Apple Watch">
+                    <h3>Apple Watch Series 9</h3>
+                    <p>45mm / Midnight Aluminum</p>
+                    <div class="price">16 200 ₴</div>
+                    <a href="https://t.me/wnesnoww" target="_blank" class="btn-buy">Купити</a>
+                </div>
+
+                <!-- MagSafe Battery Pack -->
+                <div class="product-card">
+                    <img src="https://hotline.ua/img/tx/313/3133379355.jpg" alt="MagSafe">
+                    <h3>MagSafe Battery Pack</h3>
+                    <p>External Battery for iPhone</p>
+                    <div class="price">3 400 ₴</div>
+                    <a href="https://t.me/wnesnoww" target="_blank" class="btn-buy">Купити</a>
+                </div>
+
+                <!-- Marshall Emberton -->
+                <div class="product-card">
+                    <div class="product-badge">Acoustic</div>
+                    <img src="https://hotline.ua/img/tx/242/2426359355.jpg" alt="Marshall">
+                    <h3>Marshall Emberton II</h3>
+                    <p>Portable Speaker / Black & Brass</p>
+                    <div class="price">6 900 ₴</div>
+                    <a href="https://t.me/wnesnoww" target="_blank" class="btn-buy">Купити</a>
+                </div>
+
+                <!-- Samsung Buds 2 Pro -->
+                <div class="product-card">
+                    <img src="https://hotline.ua/img/tx/335/3356071355.jpg" alt="Galaxy Buds">
+                    <h3>Galaxy Buds 2 Pro</h3>
+                    <p>Bora Purple / Hi-Fi Sound</p>
+                    <div class="price">5 500 ₴</div>
+                    <a href="https://t.me/wnesnoww" target="_blank" class="btn-buy">Купити</a>
+                </div>
+
+                <!-- Power Bank Baseus -->
+                <div class="product-card">
+                    <img src="https://hotline.ua/img/tx/354/3545648155.jpg" alt="Baseus">
+                    <h3>Baseus Adaman 65W</h3>
+                    <p>20000mAh / Metal Case</p>
+                    <div class="price">2 100 ₴</div>
+                    <a href="https://t.me/wnesnoww" target="_blank" class="btn-buy">Купити</a>
+                </div>
+            </div>
+        </main>
+
+         <footer class="bottom-bar">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>NANO<span>TECH</span></h3>
+                <p>Продаж та професійний ремонт гаджетів з 2016 року.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Зв'язок</h4>
+                <ul>
+                    <li><a href="tel:+380981782968">📞 +38 (098) 178-29-68</a></li>
+                    <li><a href="mailto:info@nanotech.ua">✉️ info@nanotech.ua</a></li>
+                    <li>📍 с. Довге, вул. Центральна, 52 </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Ми в соцмережах</h4>
+                <div class="social-icons-only">
+                    <a href="https://www.instagram.com/nanotechservice/" target="_blank" class="icon-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" class="icon-link"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#" target="_blank" class="icon-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" class="icon-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">© 2026 NANO TECH Store. Всі права захищені.</p>
+        </div>
+    </footer>
+    </div>
+</body>
+</html>
