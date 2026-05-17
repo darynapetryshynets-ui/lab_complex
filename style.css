@@ -1,16 +1,24 @@
-/* NANO TECH - PREMIUM DARK THEME
-   Variables & Core Setup 
-*/
+/* NANO TECH - PREMIUM CSS SETUP WITH THEME TOGGLE & PERFECT ALIGNMENT */
 :root {
     --bg-main: #f5f5f7;
     --bg-card: #ffffff;
-    --accent: #0071e3;           /* Неоновий блакитний */
-    --accent-glow: rgba(56, 189, 248, 0.3);
-   --text-primary: #1d1d1f   /* Білий текст */
+    --accent: #0071e3;           /* Фірмовий синій */
+    --accent-glow: rgba(0, 113, 227, 0.15);
+    --text-primary: #1d1d1f;     /* Темний текст */
     --text-secondary: #86868b;   /* Сірий текст */
-    --glass: rgba(30, 41, 59, 0.7);
-    --border: rgba(0, 0, 0, 0.1);
-    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --glass: rgba(255, 255, 255, 0.7);
+    --border: rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ЗМІННІ ДЛЯ ТЕМНОЇ ТЕМИ (АКТИВУЮТЬСЯ ЧЕРЕЗ КЛАС .dark-mode) */
+body.dark-mode {
+    --bg-main: #000000;          /* Глибокий чорний фон */
+    --bg-card: #1c1c1e;          /* Темно-сірі картки */
+    --text-primary: #f5f5f7;     /* Світлий текст */
+    --text-secondary: #a1a1a6;   /* Світло-сірий текст */
+    --glass: rgba(28, 28, 30, 0.8);
+    --border: rgba(255, 255, 255, 0.1);
 }
 
 /* Base Reset */
@@ -21,30 +29,26 @@
 }
 
 body {
-    background-color: var(--bg-main);
-	background: radial-gradient(circle at center, #ffffff 0%, #f5f5f7 100%) !important;
-    background-attachment: fixed !important; /* Фон не рухається при скролі */
+    background-color: var(--bg-main) !important;
+    background: radial-gradient(circle at center, var(--bg-card) 0%, var(--bg-main) 100%) !important;
+    background-attachment: fixed !important;
+    color: var(--text-primary);
+    transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
     margin: 0;
     padding: 0;
-    min-height: 100vh;;
-    color: var(--text-primary);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    line-height: 1.6;
-    display: flex;
-    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
 }
 
-/* Main Wrapper */
+/* Центрування головного контейнера сайту */
 .main-container {
     max-width: 1200px;
     width: 100%;
-    background: #ffffff !important;
+    background: var(--bg-card) !important;
     box-shadow: 0 20px 80px rgba(0, 0, 0, 0.04) !important;
-    border: 1px solid rgba(0, 0, 0, 0.08) !important;
-	border-radius: 30px;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    border: 1px solid var(--border) !important;
     border-radius: 24px;
+    margin: 20px auto 40px; /* Додано auto для ідеального центрування всього сайту */
     overflow: hidden;
     animation: fadeIn 0.8s ease-out;
 }
@@ -52,108 +56,199 @@ body {
 /* --- HEADER SECTION --- */
 .top-bar {
     display: flex;
-    background: #ffffff !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    padding: 30px 40px !important;
+    background: var(--bg-card) !important;
+    border-bottom: 1px solid var(--border) !important;
+    position: relative;
+    min-height: 100px;
 }
 
-.top-bar h1 {
-    color: #1d1d1f !important; /* Чорний колір для назви */
+/* Абсолютне центрування логотипу, щоб напис не зсувався */
+.logo-area-centered {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 5;
 }
 
-.logo-area {
-    flex: 2;
-    padding: 30px 40px;
-    background: #ffffff !important; /* Робимо білим */
+.logo-area-centered h1 {
+    font-size: 48px !important;
+    font-weight: 900 !important;
+    letter-spacing: -2px !important;
+    margin: 0 !important;
+    color: var(--text-primary) !important;
+    display: inline-block;
+}
+
+.logo-area-centered h1 span {
+    color: #0071e3 !important;
+    position: relative;
+    text-shadow: 0 0 15px rgba(0, 113, 227, 0.4), 
+                 0 0 30px rgba(0, 113, 227, 0.2);
+    background: linear-gradient(180deg, #0071e3 0%, #0056b3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Права зона для інформації та перемикача тем */
+.info-area-right {
+    margin-left: auto;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    gap: 20px;
+    text-align: right;
+    z-index: 5;
 }
 
-.logo-area h1 {
-    color: #1d1d1f !important;
-    font-size: 2rem;
+.info-area-right p {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    color: var(--text-secondary) !important;
+    font-weight: 400;
+    margin: 0 !important;
+    max-width: 200px;
 }
 
-.logo-area h1 span {
-    color: var(--accent);
-    text-shadow: 0 0 15px var(--accent-glow);
+/* Залишено для сумісності з іншими сторінками */
+.header-placeholder {
+    width: 200px;
+    display: block;
 }
 
-.info-area {
-    flex: 1;
-    background: #ffffff !important; /* Робимо білим */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-left: 1px solid rgba(0, 0, 0, 0.08) !important;
-    padding: 0 30px;
-    color: #86868b !important;
-    font-size: 0.9rem;
-}
-
-/* --- НОВИЙ СТИЛЬ МЕНЮ --- */
-/* 2. ПЕРЕФАРБОВУЄМО САМУ МЕНЮШКУ (NAV BAR) */
-/* --- NAV BAR FIX (Горизонтальне меню) --- */
+/* --- NAV BAR (ІДЕАЛЬНЕ ЦЕНТРУВАННЯ ТА СТИЛЬ) --- */
 .nav-bar {
-    background: #fbfbfd !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+    background: var(--bg-main) !important;
+    border-bottom: 1px solid var(--border) !important;
     padding: 10px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.4s ease;
 }
 
-.nav-bar ul {
-    display: flex;           /* Це поставить пункти в ряд */
-    justify-content: center; /* Центрування */
+.nav-bar ul, #menu {
+    display: flex;           
+    justify-content: center; 
+    align-items: center;
     list-style: none;
-    gap: 15px;               /* Відступ між кнопками */
+    gap: 15px;               
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
-.nav-bar a {
+.nav-bar a, #menu a {
     text-decoration: none;
     display: block;
-    color: #86868b !important;
+    color: var(--text-secondary) !important;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     padding: 10px 25px;
     border-radius: 50px;
     transition: var(--transition);
 }
 
-.nav-bar a:hover {
-    color: #1d1d1f !important;
+.nav-bar a:hover, #menu a:hover {
+    color: var(--text-primary) !important;
     background: rgba(0, 0, 0, 0.05) !important;
 }
 
-.nav-bar a.active {
-    background: #1d1d1f !important;
-    color: #ffffff !important;
+body.dark-mode .nav-bar a:hover, body.dark-mode #menu a:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.nav-bar a.active, #menu a.active {
+    background: var(--text-primary) !important;
+    color: var(--bg-card) !important;
 }
 
 /* --- GRID LAYOUT --- */
 .grid-layout {
-    display: grid;
-    grid-template-columns: 180px 1fr 180px;
+    display: grid !important;
+    grid-template-columns: 200px 1fr 200px !important;
+    gap: 0 !important;
+    border-top: 1px solid var(--border) !important;
     border-bottom: 1px solid var(--border);
 }
 
 .content-area {
-    padding: 60px;
-    background: #ffffff !important;
+    padding: 60px 80px !important;
+    background: var(--bg-card) !important;
     color: var(--text-primary) !important;
-    border-left: 1px solid var(--border);
-    border-right: 1px solid var(--border);
+    position: relative !important;
 }
 
 .hero-text h2 {
-    color: #1d1d1f !important; /* Чорний заголовок */
+    font-size: 3rem !important; 
+    font-weight: 800 !important;
+    letter-spacing: -1px !important;
+    margin-bottom: 20px !important;
+    color: var(--text-primary) !important;
 }
 
 .hero-text p, .feat-item p {
-    color: #424245 !important;
+    font-size: 1.2rem !important;
+    line-height: 1.5 !important;
+    color: var(--text-secondary) !important; 
+    max-width: 600px;
 }
 
-/* Features Glass Cards */
+.hero-text div {
+    margin-bottom: 40px !important;
+    padding-left: 20px !important;
+    border-left: 3px solid var(--border) !important; 
+}
+
+.hero-text b {
+    display: inline-block !important;
+    font-size: 14px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    color: var(--accent) !important; 
+    margin-bottom: 8px !important;
+    border-bottom: 2px solid var(--accent) !important; 
+    padding-bottom: 2px !important;
+}
+
+/* --- АДАПТИВНІ КАРТКИ ТОВАРІВ ДЛЯ ІНШИХ СТОРІНОК (ФІКС БІЛОГО ФОНУ) --- */
+.product-card {
+    background: var(--bg-card) !important; /* Автоматично змінює колір відповідно до обраної теми */
+    border: 1px solid var(--border) !important;
+    border-radius: 20px !important;
+    padding: 30px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    transition: var(--transition) !important;
+}
+
+.product-card h3 {
+    color: var(--text-primary) !important; /* Робить текст адаптивним до теми сайту */
+    margin-top: 15px !important;
+    margin-bottom: 10px !important;
+    font-size: 1.2rem !important;
+}
+
+.product-card p {
+    color: var(--text-secondary) !important; /* Характеристики не зливатимуться з білим */
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+}
+
+.product-card .price {
+    color: var(--accent) !important; /* Яскрава акцентна ціна */
+    font-weight: 800 !important;
+    font-size: 1.3rem !important;
+    margin-top: 15px !important;
+}
+
+/* Features Cards */
 .features {
     margin-top: 40px;
     display: grid;
@@ -172,76 +267,97 @@ body {
 .feat-item:hover {
     transform: translateY(-5px);
     border-color: var(--accent);
-    background: rgba(56, 189, 248, 0.05);
+    background: rgba(0, 113, 227, 0.05);
 }
 
-.feat-item h3, .feat-item p {
-    color: #1d1d1f !important;
+.feat-item h3 {
+    color: var(--text-primary) !important;
 }
 
 /* --- SIDEBARS --- */
 .gallery-side {
-    background: #f5f5f7 !important; /* Світло-сірі бокові панелі */
-    border: none !important;
+    background: var(--bg-main) !important; 
+    padding: 20px 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    transition: background 0.4s ease;
+}
+
+.gallery-side:first-child {
+    border-right: 1px solid var(--border) !important;
+}
+
+.gallery-side:last-child {
+    border-left: 1px solid var(--border) !important;
 }
 
 .img-card {
-    border-radius: 12px;
-    overflow: hidden;
+    border-radius: 16px !important;
+    overflow: hidden !important;
     aspect-ratio: 1;
-    border: 1px solid var(--border);
-    transition: var(--transition);
+    border: 1px solid var(--border) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 .img-card img {
     width: 100%;
     height: 100%;
-	cursor: zoom-in !important;
+    cursor: zoom-in !important;
     object-fit: cover;
     transition: transform 0.6s ease;
 }
 
+.img-card:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
 .img-card:hover img {
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 
-/* --- СЕКЦІЯ ПЕРЕВАГ (СТИЛЬ IFRANKO) --- */
+/* --- СЕКЦІЯ ПЕРЕВАГ --- */
 .benefits-section {
-    background-color: #fbfbfd !important; /* Світлий фон */
+    padding: 80px 0;
+    background-color: var(--bg-card) !important; 
     border-top: 1px solid var(--border) !important;
-}
-
-.benefit-item i {
-    color: var(--accent) !important; /* Сині іконки */
+    display: flex;
+    justify-content: center;
+    transition: background 0.4s ease;
 }
 
 .benefits-container {
     display: flex !important;
-    align-items: center !important; /* Центрує фото та текст по вертикалі */
+    align-items: center !important; 
     gap: 50px !important;
-    max-width: 1100px;
+    max-width: 1200px;
+    width: 90%;
     margin: 0 auto;
 }
 
 .benefits-image {
-    flex: 1 !important; /* Дає фото рівно половину місця */
-    max-width: 450px !important; /* Обмежує ширину, щоб воно не ставало величезним */
+    flex: 1;
+    height: 450px;       
+    border-radius: 28px; 
+    overflow: hidden;    
+    max-width: 450px !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 .benefits-image img {
     width: 100% !important;
-    height: auto !important; /* Зберігає рідні пропорції фото */
-    border-radius: 24px !important;
-    object-fit: cover !important; /* Акуратно вписує фото в рамки */
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+    height: 100% !important;
+    object-fit: cover !important; 
+    object-position: center; 
+    display: block;
 }
-
-
 
 .benefits-content h2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
-    color: #1d1d1f !important; /* Чорний текст */
+    color: var(--text-primary) !important; 
 }
 
 .benefits-grid {
@@ -256,7 +372,7 @@ body {
 
 .benefit-item i {
     font-size: 2.5rem;
-    color: var(--accent);
+    color: var(--accent) !important; 
     margin-bottom: 15px;
     display: block;
 }
@@ -269,9 +385,10 @@ body {
 
 /* --- FOOTER --- */
 .bottom-bar {
-   background: #ffffff !important; /* Чисто білий фон */
-    border-top: 1px solid rgba(0, 0, 0, 0.08) !important; /* Тонка лінія розділення */
+    background: var(--bg-card) !important; 
+    border-top: 1px solid var(--border) !important; 
     padding: 60px 40px 30px !important;
+    transition: background 0.4s ease;
 }
 
 .footer-grid {
@@ -282,20 +399,18 @@ body {
     margin: 0 auto 40px;
 }
 
-.footer-col h3, 
-.footer-col h3 span, 
-.footer-col h4 { color: #1d1d1f !important; /* Глибокий чорний */
+.footer-col h3, .footer-col h3 span, .footer-col h4 { 
+    color: var(--text-primary) !important; 
     text-shadow: none !important;
 }
-.footer-col p, 
-.footer-col li, 
-.footer-col a {
-    color: #424245 !important; /* Темно-сірий для комфортного читання */
+
+.footer-col p, .footer-col li, .footer-col a {
+    color: var(--text-secondary) !important; 
     text-decoration: none !important;
 }
+
 .footer-col a:hover { color: var(--accent); }
 
-/* Соцмережі іконки */
 .social-icons-only {
     display: flex;
     gap: 15px;
@@ -309,61 +424,77 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: rgba(30, 41, 59, 0.5);
-    border: 1px solid var(--border);
-    color: var(--text-secondary);
+    background: var(--bg-main) !important; 
+    border: 1px solid var(--border) !important;
+    color: var(--text-primary) !important; 
     font-size: 1.2rem;
+    transition: var(--transition);
+    text-decoration: none !important;
+}
+
+.icon-link i {
+    color: var(--text-primary) !important;
     transition: var(--transition);
 }
 
 .icon-link:hover {
-    background: var(--accent);
-    color: #fff;
+    background: var(--accent) !important;
+    border-color: var(--accent) !important;
     transform: translateY(-5px);
     box-shadow: 0 10px 20px var(--accent-glow);
 }
 
-/* --- ANIMATIONS --- */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+.icon-link:hover i {
+    color: #ffffff !important;
 }
 
-.animate-on-scroll.appear {
-    opacity: 1;
-    transform: translateY(0);
+/* --- BUTTONS --- */
+.hero-text a, .content-area a, .btn-consult {
+    display: inline-block !important;
+    margin-top: 30px !important;
+    padding: 16px 35px !important;
+    background-color: var(--text-primary) !important; 
+    color: var(--bg-card) !important; 
+    text-decoration: none !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    text-align: center !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+    cursor: pointer !important;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.hero-text a:hover, .btn-consult:hover {
+    background-color: var(--accent) !important; 
+    transform: translateY(-3px) !important;
+    box-shadow: 0 15px 30px rgba(0, 113, 227, 0.4) !important;
+    color: #ffffff !important;
 }
 
-.glow-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--accent);
+/* Перемикач тем кнопка */
+.theme-toggle-btn {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    font-size: 18px;
+    padding: 8px 12px;
     border-radius: 50%;
-    box-shadow: 0 0 10px var(--accent);
-    animation: pulse 2s infinite;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-@keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.5); opacity: 0.5; }
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
+    background: var(--accent);
+    color: #ffffff;
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 1024px) {
-    .grid-layout { grid-template-columns: 1fr; }
-    .gallery-side { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-    .img-card { width: 120px; }
-    .benefits-container { grid-template-columns: 1fr; text-align: center; }
-    .benefit-item { text-align: center; }
-}
-
-/* Стилі для вікна перегляду фото */
+/* --- LIGHTBOX & MODALS --- */
 .image-lightbox {
     display: none;
     position: fixed;
@@ -372,12 +503,16 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(15px);
     align-items: center;
     justify-content: center;
     cursor: zoom-out;
     animation: fadeIn 0.3s ease;
+}
+
+body:not(.dark-mode) .image-lightbox {
+    background: rgba(255, 255, 255, 0.92);
 }
 
 .image-lightbox img {
@@ -388,245 +523,21 @@ body {
     cursor: default;
 }
 
+/* --- ANIMATIONS & GLOW --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll.appear, .animate-on-scroll.appeared {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* СТИЛЬ КНОПКИ КОНСУЛЬТАЦІЇ */
-.hero-text a {
-    display: inline-block !important;
-    margin-top: 25px !important;
-    padding: 14px 32px !important;
-    background: #1d1d1f !important; /* Чорний Apple-стиль */
-    color: #ffffff !important;
-    text-decoration: none !important;
-    border-radius: 50px !important; /* Повністю закруглена */
-    font-weight: 600 !important;
-    font-size: 15px !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
-}
-
-.hero-text a:hover {
-    background: #0071e3 !important; /* Зміна на фірмовий синій */
-    transform: translateY(-3px) !important; /* Легкий підйом при наведенні */
-    box-shadow: 0 15px 30px rgba(0, 113, 227, 0.3) !important;
-}
-
-/* ПОКРАЩЕННЯ ТЕКСТОВОГО БЛОКУ */
-.content-area {
-    padding: 60px 80px !important; /* Більше відступів по боках */
-}
-
-.hero-text h2 {
-    font-size: 3rem !important; /* Збільшений заголовок */
-    font-weight: 800 !important;
-    letter-spacing: -1px !important;
-    margin-bottom: 20px !important;
-    color: #1d1d1f !important;
-}
-
-.hero-text p {
-    font-size: 1.2rem !important;
-    line-height: 1.5 !important;
-    color: #86868b !important; /* М'який сірий колір */
-    max-width: 600px;
-}
-
-/* Стиль для іконок переваг (Експертність, Оригінальність) */
-.hero-text div {
-    margin-bottom: 40px !important;
-    padding-left: 20px !important;
-    border-left: 3px solid #f5f5f7 !important; /* Вертикальна декоративна лінія зліва */
-}
-
-/* СТИЛЬ ВНУТРІШНІХ МЕНЮ/АКЦЕНТІВ */
-.hero-text b {
-    display: inline-block !important;
-    font-size: 14px !important;
-    text-transform: uppercase !important;
-    letter-spacing: 2px !important;
-    color: #0071e3 !important; /* Синій акцент */
-    margin-bottom: 8px !important;
-    border-bottom: 2px solid #0071e3 !important; /* Лінія під кожним пунктом */
-    padding-bottom: 2px !important;
-}
-
-/* КРУТА КНОПКА КОНСУЛЬТАЦІЇ - ВЕРСІЯ 2.0 */
-.hero-text a, 
-.content-area a, 
-.btn-consult {
-    display: inline-block !important;
-    margin-top: 30px !important;
-    padding: 16px 35px !important;
-    background-color: #1d1d1f !important; /* Чорний колір Apple */
-    color: #ffffff !important; /* Білий текст */
-    text-decoration: none !important;
-    border-radius: 50px !important;
-    font-weight: 600 !important;
-    font-size: 16px !important;
-    text-align: center !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
-    cursor: pointer !important;
-}
-
-/* Ефект при наведенні */
-.hero-text a:hover, 
-.btn-consult:hover {
-    background-color: #0071e3 !important; /* Зміна на синій */
-    transform: translateY(-3px) !important;
-    box-shadow: 0 15px 30px rgba(0, 113, 227, 0.4) !important;
-    color: #ffffff !important;
-}
-
-.img-card {
-    border-radius: 16px !important;
-    overflow: hidden !important;
-    border: 1px solid rgba(0, 0, 0, 0.05) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
-    transition: transform 0.3s ease !important;
-}
-
-.img-card:hover {
-    transform: scale(1.05) !important;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
-}
-
-/* РОЗДІЛЬНІ ЛІНІЇ ДЛЯ ГАЛЕРЕЙ */
-.grid-layout {
-    display: grid !important;
-    grid-template-columns: 200px 1fr 200px !important;
-    gap: 0 !important; /* Прибираємо проміжки, щоб лінії прилягали */
-    border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
-}
-
-.gallery-side {
-    background: #fbfbfd !important;
-    padding: 20px 15px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 20px !important;
-}
-
-/* Ліва лінія */
-.gallery-side:first-child {
-    border-right: 1px solid rgba(0, 0, 0, 0.1) !important;
-}
-
-/* Права лінія */
-.gallery-side:last-child {
-    border-left: 1px solid rgba(0, 0, 0, 0.1) !important;
-}
-
-.content-area {
-    padding: 60px !important;
-    background: #ffffff !important;
-    position: relative !important;
-}
-
-/* ЦЕНТРОВАНИЙ ДИЗАЙН ГОЛОВНОЇ */
-.top-bar.centered {
-    display: flex;
-    flex-direction: column; /* Елементи в стовпчик */
-    align-items: center;    /* Центрування по горизонталі */
-    justify-content: center;
-    padding: 40px 20px !important;
-    border-bottom: 1px solid #f2f2f2;
-}
-
-.top-bar.centered .logo-area {
-    border: none !important; /* Прибираємо вертикальну лінію з image_3b35bc.png */
-    padding: 0 !important;
-    margin-bottom: 10px;
-}
-
-.top-bar.centered .logo-area h1 {
-    font-size: 48px !important; /* Робимо логотип більшим на головній */
-    letter-spacing: -2px !important;
-}
-
-.top-bar.centered .info-area {
-    padding: 0 !important;
-    text-align: center;
-}
-
-.top-bar.centered .info-area p {
-    font-size: 16px !important;
-    color: #86868b !important;
-    font-weight: 400;
-}
-
-/* Центрування меню */
-.nav-bar ul {
-    justify-content: center !important;
-    gap: 30px; /* Більше простору між пунктами */
-}
-
-/* СПЕЦІАЛЬНИЙ МАКЕТ ДЛЯ ГОЛОВНОЇ */
-.main-page-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Розносить елементи по краях */
-    padding: 30px 40px !important;
-    position: relative;
-    border-bottom: 1px solid #f2f2f2;
-    min-height: 100px;
-}
-
-/* ЦЕНТРУВАННЯ ТА СТИЛЬ ЛОГОТИПУ */
-.logo-area-centered h1 {
-    font-size: 48px !important; /* Трохи збільшив для солідності */
-    font-weight: 900 !important;
-    letter-spacing: -2px !important;
-    margin: 0 !important;
-    color: #1d1d1f !important;
-    display: inline-block;
-}
-
-/* ПІДСВІТКА ДЛЯ СИНЬОЇ ЧАСТИНИ (TECH) */
-.logo-area-centered h1 span {
-    color: #0071e3 !important;
-    position: relative;
-    /* М'яке неонове сяйво навколо літер */
-    text-shadow: 0 0 15px rgba(0, 113, 227, 0.4), 
-                 0 0 30px rgba(0, 113, 227, 0.2);
-    /* Ефект легкого градієнту всередині тексту */
-    background: linear-gradient(180deg, #0071e3 0%, #0056b3 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-/* Інфо-блок справа в колонці */
-.info-area-right {
-    margin-left: auto; /* Притискає до правого краю */
-    text-align: right; /* Текст вирівняний по правому краю */
-    max-width: 200px;  /* Щоб текст розбивався на колонку */
-}
-
-.info-area-right p {
-    font-size: 13px !important;
-    line-height: 1.4 !important;
-    color: #86868b !important;
-    font-weight: 400;
-    margin: 0 !important;
-}
-
-/* Для мобільних пристроїв — краще повернути в стовпчик */
-@media (max-width: 768px) {
-    .main-page-header {
-        flex-direction: column;
-        padding: 20px !important;
-    }
-    .logo-area-centered {
-        position: static;
-        transform: none;
-        margin-bottom: 15px;
-    }
-    .info-area-right {
-        text-align: center;
-        margin: 0 auto;
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .bg-glow-1, .bg-glow-2 {
@@ -640,73 +551,43 @@ body {
 }
 
 .bg-glow-1 {
-    background: rgba(0, 113, 227, 0.08); /* Синій відблиск */
+    background: rgba(0, 113, 227, 0.08); 
     top: -200px;
     left: -200px;
 }
 
 .bg-glow-2 {
-    background: rgba(0, 0, 0, 0.03); /* Темний відблиск */
+    background: rgba(0, 113, 227, 0.03); 
     bottom: -200px;
     right: -200px;
 }
 
-/* Основна секція переваг */
-.benefits-section {
-    padding: 80px 0;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .grid-layout { grid-template-columns: 1fr !important; }
+    .gallery-side { flex-direction: row !important; flex-wrap: wrap; justify-content: center; }
+    .img-card { width: 120px; }
+    .gallery-side:first-child, .gallery-side:last-child { border: none !important; }
 }
 
-/* Контейнер, що об'єднує фото та текст */
-.benefits-container {
-    display: flex;
-    align-items: center; /* Центрування по вертикалі */
-    gap: 50px;           /* Відстань між фото та текстом */
-    max-width: 1200px;
-    width: 90%;
-}
-
-/* Контейнер для фото (виправляє кривизну) */
-.benefits-image {
-    flex: 1;
-    height: 450px;       /* Фіксована висота для стабільності макета */
-    border-radius: 28px; /* Закруглені краї як у iPhone */
-    overflow: hidden;    /* Щоб фото не виходило за рамки радіуса */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-}
-
-/* Стилі безпосередньо для зображення */
-.benefits-image img {
-    width: 100%;
-    height: 100%;
-    /* ГАРАНТІЯ РІВНОГО ФОТО: */
-    object-fit: cover;   /* Фото заповнює блок, не розтягуючись */
-    object-position: center; /* Центрує важливі деталі фото */
-    display: block;
-}
-
-/* Анімація при скролі (базовий стан) */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-/* Клас, який додається через JS при появі на екрані */
-.animate-on-scroll.appeared {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Адаптивність для телефонів */
 @media (max-width: 768px) {
+    .main-page-header, .top-bar {
+        flex-direction: column;
+        padding: 20px !important;
+    }
+    .logo-area-centered {
+        position: static;
+        transform: none;
+        margin-bottom: 15px;
+    }
+    .info-area-right {
+        text-align: center;
+        margin: 0 auto;
+    }
     .benefits-container {
-        flex-direction: column; /* Текст під фото */
+        flex-direction: column; 
         text-align: center;
     }
-    
     .benefits-image {
         width: 100%;
         height: 300px;

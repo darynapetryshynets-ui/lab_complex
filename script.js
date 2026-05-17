@@ -1,5 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+	// --- КЕРУВАННЯ ТЕМНОЮ ТЕМОЮ ---
+const themeToggleBtn = document.getElementById('theme-toggle');
+
+// Перевіряємо, яку тему користувач вибрав раніше (якщо вибрав)
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    if (themeToggleBtn) themeToggleBtn.innerText = '☀️'; // Якщо тема темна, показуємо сонце
+}
+
+// Функція зміни теми при кліку
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        // Перемикаємо клас .dark-mode у тегу body
+        document.body.classList.toggle('dark-mode');
+        
+        let theme = 'light';
+        if (document.body.classList.contains('dark-mode')) {
+            theme = 'dark';
+            themeToggleBtn.innerText = '☀️'; // Змінюємо іконку на сонце
+        } else {
+            themeToggleBtn.innerText = '🌙'; // Змінюємо іконку на місяць
+        }
+        
+        // Записуємо вибір у пам'ять браузера
+        localStorage.setItem('theme', theme);
+    });
+}
+	
+	
     // --- 1. КЕРУВАННЯ МЕНЮ (Active Class) ---
     const menuLinks = document.querySelectorAll('#menu a');
 
