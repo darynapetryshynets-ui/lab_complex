@@ -562,34 +562,102 @@ body:not(.dark-mode) .image-lightbox {
     right: -200px;
 }
 
-/* --- RESPONSIVE --- */
+/* --- АДАПТИВНІСТЬ ТА ІДЕАЛЬНИЙ МАСШТАБ (ПК ТА ТЕЛЕФОНИ) --- */
 @media (max-width: 1024px) {
-    .grid-layout { grid-template-columns: 1fr !important; }
-    .gallery-side { flex-direction: row !important; flex-wrap: wrap; justify-content: center; }
-    .img-card { width: 120px; }
-    .gallery-side:first-child, .gallery-side:last-child { border: none !important; }
+    .grid-layout { 
+        grid-template-columns: 1fr !important; 
+    }
+    .gallery-side { 
+        flex-direction: row !important; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        padding: 20px !important;
+    }
+    .img-card { 
+        width: calc(25% - 15px); 
+        min-width: 100px;
+    }
+    .gallery-side:first-child, .gallery-side:last-child { 
+        border: none !important; 
+    }
+    body .product-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+    }
 }
 
 @media (max-width: 768px) {
     .main-page-header, .top-bar {
-        flex-direction: column;
-        padding: 20px !important;
+        flex-direction: column !important;
+        padding: 20px 15px !important;
+        min-height: auto !important;
+        gap: 15px !important;
     }
     .logo-area-centered {
-        position: static;
-        transform: none;
-        margin-bottom: 15px;
+        position: static !important;
+        transform: none !important;
+        margin-bottom: 5px;
     }
     .info-area-right {
-        text-align: center;
-        margin: 0 auto;
+        text-align: center !important;
+        margin: 0 auto !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+    .info-area-right p {
+        max-width: 100% !important;
+        text-align: center !important;
+    }
+    .nav-bar ul, #menu {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+        padding: 10px !important;
+    }
+    .nav-bar a, #menu a {
+        padding: 8px 16px !important;
+        font-size: 13px !important;
+    }
+    html body .product-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        padding: 0 10px !important;
+    }
+    .product-card {
+        padding: 20px !important;
+    }
+    .product-card img {
+        max-width: 100% !important;
+        height: auto !important;
     }
     .benefits-container {
-        flex-direction: column; 
-        text-align: center;
+        flex-direction: column !important; 
+        text-align: center !important;
+        gap: 30px !important;
     }
     .benefits-image {
-        width: 100%;
-        height: 300px;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 250px !important;
+    }
+    .benefits-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    .benefit-item {
+        text-align: center !important;
+    }
+    .hero-text h2 {
+        font-size: 2rem !important;
+    }
+    .content-area {
+        padding: 40px 20px !important;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+        gap: 30px !important;
+    }
+    .social-icons-only {
+        justify-content: center !important;
     }
 }
